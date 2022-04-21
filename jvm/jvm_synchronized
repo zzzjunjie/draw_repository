@@ -1,1 +1,170 @@
-<mxfile host="app.diagrams.net" modified="2022-04-21T01:42:10.269Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36" version="17.4.6" etag="DCI4MphIGJzHaQGD-9j3" type="github"><diagram id="6IfIg7m1O02IWrn7ETSv">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-04-21T02:04:29.125Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36" etag="6uOERom1pohCGwCpKRok" version="17.4.6" type="github">
+  <diagram id="6IfIg7m1O02IWrn7ETSv" name="第 1 页">
+    <mxGraphModel dx="2249" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-1" target="voNRSfmIyHTWz5vTWsgP-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-1" value="线程访问同步代码块" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="110" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-5" value="01标志位" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-2" target="voNRSfmIyHTWz5vTWsgP-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-2" value="判断目前锁的标志位" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="190" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-7" value="0否" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-4" target="voNRSfmIyHTWz5vTWsgP-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-9" value="1是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-4" target="voNRSfmIyHTWz5vTWsgP-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-4" value="是否偏向锁？" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="350" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-6" value="升级为轻量级锁，并进行CAS竞争锁" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="170" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-11" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-8" target="voNRSfmIyHTWz5vTWsgP-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-19" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-8" target="voNRSfmIyHTWz5vTWsgP-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-8" value="检查对象头的记录中，偏向ID是否为当前线程ID？" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="227.5" y="520" width="365" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-10" target="voNRSfmIyHTWz5vTWsgP-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-10" value="获得偏向锁&lt;br&gt;Thread Id | epoch | age |1是偏向锁 |01锁标志位" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="270" y="710" width="280" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-12" target="voNRSfmIyHTWz5vTWsgP-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-12" value="执行同步代码块" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="350" y="1620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-14" target="voNRSfmIyHTWz5vTWsgP-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-14" value="开始" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-90" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-16" value="结束" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="1760" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-18" target="voNRSfmIyHTWz5vTWsgP-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-18" value="CAS操作&lt;br&gt;替换对象头重的Thread Id" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="795" y="535" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-22" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-20" target="voNRSfmIyHTWz5vTWsgP-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-24" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-20" target="voNRSfmIyHTWz5vTWsgP-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-20" value="是否替换成功？" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="802.5" y="695" width="105" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-26" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-23" target="voNRSfmIyHTWz5vTWsgP-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-23" value="开始偏向锁撤销&lt;br&gt;（等待竞争才释放锁的机制）" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="757.5" y="840" width="195" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-28" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-25" target="voNRSfmIyHTWz5vTWsgP-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-25" value="等待所有线程进入安全点" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="795" y="972.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-27" target="voNRSfmIyHTWz5vTWsgP-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-27" value="暂停持有偏向锁的线程" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="790" y="1111.5" width="130" height="58.5" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-34" value="存活" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-31" target="voNRSfmIyHTWz5vTWsgP-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-43" value="未存活" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-31" target="voNRSfmIyHTWz5vTWsgP-42">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1030" y="1285" />
+              <mxPoint x="1030" y="1370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-31" value="检查持有偏向锁的线程是否存活？" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="747.5" y="1239.25" width="215" height="90.75" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-33" target="voNRSfmIyHTWz5vTWsgP-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-33" value="遍历线程栈中的Lock Record" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="560" y="1350.005" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-38" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-35" target="voNRSfmIyHTWz5vTWsgP-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-52" value="否" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-35" target="voNRSfmIyHTWz5vTWsgP-42">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1030" y="1445" />
+              <mxPoint x="1030" y="1370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-35" value="线程是否在执行同步代码？" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="769.5" y="1410" width="183" height="69.99" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-37" target="voNRSfmIyHTWz5vTWsgP-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-37" value="升级为轻量级锁，进行CAS竞争锁" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="801" y="1564.985" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-39" target="voNRSfmIyHTWz5vTWsgP-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-39" value="唤醒暂停线程" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#cdeb8b;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="601" y="1564.985" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-45" value="是" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-42" target="voNRSfmIyHTWz5vTWsgP-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-50" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-42" target="voNRSfmIyHTWz5vTWsgP-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-42" value="是否开启重偏向？" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="1130" y="1327.3100000000002" width="140" height="85.38" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-47" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-44" target="voNRSfmIyHTWz5vTWsgP-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-44" value="设置为匿名偏向状态&lt;br&gt;（没有线程持有该偏向锁）" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="1505.3700000000001" width="160" height="57.3" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-46" target="voNRSfmIyHTWz5vTWsgP-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-46" value="设置对象头重的偏向Thread Id&lt;br&gt;New Thread Id | epoch | age | 1（偏向锁）|01（标志位）" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#ffff88;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="1045" y="1630" width="310" height="61.36" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="voNRSfmIyHTWz5vTWsgP-49" target="voNRSfmIyHTWz5vTWsgP-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="voNRSfmIyHTWz5vTWsgP-49" value="撤销偏向锁，将对象头设置为无锁状态&lt;br&gt;hash code | age | 0 | 01" style="whiteSpace=wrap;html=1;rounded=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="1370" y="1335.97" width="240" height="66.71" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
